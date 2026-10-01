@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulador de Paquímetro</title>
+  <script src="./ruffle.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #fff;
+    }
+    #simulador {
+      width: 100vw;
+      height: 100vh;
+    }
+    ruffle-player {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="simulador"></div>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const ruffle = window.RufflePlayer.newest();
+      const player = ruffle.createPlayer();
+      player.style.width = "100%";
+      player.style.height = "100%";
+      document.getElementById("simulador").appendChild(player);
+
+      player.load({
+        url: "./paquimetro-milimetro-05.swf",
+        autoplay: "on",
+        unmuteOverlay: "hidden",
+        backgroundColor: "#FFFFFF",
+        scale: "showAll"
+      });
+    });
+  </script>
+</body>
+</html>
